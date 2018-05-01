@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<script src="~/Scripts/MyScript.js"></script>
+<center>
+    <form method="post" action="~/ExistingUser/loginCheck">
+        <table>
+            <tr>
+
+                <td>
+                    Login
+                </td>
+                <td>
+                    <input type="text" id="login" name="login" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    <input type="text" id="Password" name="Password" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+
+                    <input id="Loginbtn" type="submit" value="Login" onclick="return (validateLoginPass())" />
+
+                    <input id="Cancel" type="button" value="Cancel" onclick="document.location.href='@Url.Content("~/Home/Index")'" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="color:red">@Session["message2"]</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <form action="~/ExistingUser/ResetPass" method="post">
+        <table>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+                <td>
+                    Forget Password?
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="text" id="email" name="email" />
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input id="ResetPass" type="submit" value="Reset Password" onclick="return(validateEmail())" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="color:red">@Session["message3"]</span>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</center>
+

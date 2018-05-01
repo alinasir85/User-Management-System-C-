@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    var image=Session["image"];
+}
+
+<table>
+    <tr>
+        <td style="padding-right:150"><h2>Welcome @Session["name"]</h2></td> <td></td><td></td>  <td></td><td></td><td></td> <td></td> 
+        <td colspan="3">
+            
+            <img src="~/Images/@image" alt="" width="300" height="300"/><br /><br />
+            <form action="~/NewUser/NewUser" method="post">
+                <input id="EditProfile" type="submit" value="Edit Profile" style="width:120%" />
+            </form><br /><br />
+
+            <form action="~/NewUser/Logout" method="post">
+            <input id="Logout" type="submit" value="Logout" width="80" style="width:120%"/>
+</form>
+        </td>
+    </tr>
+</table>

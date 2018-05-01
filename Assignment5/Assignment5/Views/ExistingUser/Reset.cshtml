@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Reset";
+}
+
+<center>
+    <h2>Enter Code</h2><br />
+    <form action="~/ExistingUser/CodeVerify" method="post">
+        <input type="text" id="code" name="code" /><br />
+        <input type="submit" value="Confirm" />
+    </form>
+    <span style="color:red">@Session["message4"]</span>
+</center>

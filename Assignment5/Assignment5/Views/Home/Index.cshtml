@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Main";
+}
+ 
+<center>
+    <br /><br /><br /><br /><br /><br />
+    <button value="New User" style="width:50%" onclick="document.location.href='@Url.Content("~/NewUser/NewUser")'">New User</button><br /><br />
+    <button value="Existing User" style="width:50%" onclick="document.location.href='@Url.Content("~/ExistingUser/Login")'">Existing User</button><br /><br />
+    <button value="Admin" style="width:50%"  onclick="document.location.href='@Url.Content("~/Admin/AdminLogin")'" >Admin</button>
+</center>

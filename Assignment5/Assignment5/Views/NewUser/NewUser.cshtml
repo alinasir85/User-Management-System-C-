@@ -1,0 +1,116 @@
+﻿
+@{
+
+    ViewBag.Title = "NewUser";
+}
+
+@model Assignment5.Models.UserDTO
+
+<script src="~/Scripts/MyScript.js"></script>
+
+<form action="@Url.Content("~/NewUser/Login")" method="post" enctype="multipart/form-data">
+    <table>
+
+        <tr>
+
+            <td colspan="3">
+                <input id="File1" type="file" name="image" /> <img src="~/Images/@Model.imageName" alt="" width="200" height="200" />
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <input id="name" type="text" name="name" value="@Model.name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Login:
+            </td>
+            <td>
+                <input id="login" type="text" name="login" value="@Model.login" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input id="password" type="text" name="password" value="@Model.password" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input id="email" type="text" name="email" value="@Model.email" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender:
+            </td>
+            <td>
+                <select name="Gender" id="gender">
+                    <option value="M" @(Model.gender == 'M' ? "checked='checked'" : string.Empty)>Male</option>
+                    <option value="F" @(Model.gender == 'F' ? "checked='checked'" : string.Empty)>Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address:
+            </td>
+            <td>
+                <textarea id="Address" rows="5" cols="20" name="address" value="@Model.address" >@Model.address</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>  Age: </td>
+            <td><input type="number" name="age" id="age" value="@Model.age"></td>
+        </tr>
+        <tr>
+            <td>
+                NIC:
+            </td>
+            <td>
+                <input id="NIC" type="text" name="nic" value="@Model.nic" maxlength="13" minlength="13" />
+            </td>
+        </tr>
+        <tr>
+            <td> DOB: </td>
+            <td><input type="date" name="date" id="date" value="@Model.dob"></td>
+        </tr>
+        <tr>
+            <td>
+                Sports:
+            </td>
+            <td>
+                Cricket<input id="Cricket" type="checkbox" value="Cricket" name="cricket" @(Model.cricket == 1 ? "checked='checked'" : string.Empty) />
+                Hockey <input id="Hockey" type="checkbox" value="Hockey" name="hockey" @(Model.hockey == 1 ? "checked='checked'" : string.Empty) />
+                Chess <input id="Chess" type="checkbox" value="Chess" name="chess" @(Model.chess == 1 ? "checked='checked'" : string.Empty) />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="Create" type="submit" value="Create" name="create" onclick="return(validate())" style="width:150%" />
+            </td>
+            </tr>
+    </table>
+</form>
+
+<form action="~/NewUser/Logout" method="post">
+    <table>
+        <tr>
+            <td>
+                <input id="Cancel" type="submit" value="Cancel" style="width:260%" />
+            </td>
+        </tr>
+    </table>
+</form>
+<span style="color:red">@Session["message"]</span>

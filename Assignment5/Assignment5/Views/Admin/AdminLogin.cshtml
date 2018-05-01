@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "AdminLogin";
+}
+<script src="~/Scripts/MyScript.js"></script>
+<center>
+<form method="post" action="~/Admin/AdminHome">
+    <table>
+        <tr>
+
+            <td>
+                Login
+            </td>
+            <td>
+                <input type="text" id="login" name="login" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                <input type="text" id="Password" name="Password" />
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>
+                <center>
+                    <input id="Loginbtn" type="submit" value="Login" style="width:150%" onclick="return (validateLoginPass())" />
+                </center>
+                </td>
+        </tr>
+    </table>
+    </form>
+    </center>
+
+    <form action="~/NewUser/Logout" method="post">
+        <center>
+            <table>
+                <tr>
+                    <td>
+                        <input id="Cancel" type="submit" value="Cancel" style="width:150%;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color:red">@Session["message2"]</span>
+                    </td>
+                </tr>
+
+            </table>
+        </center>
+    </form>
+                
+   
